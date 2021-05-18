@@ -114,6 +114,64 @@ gdb 要调试的可执行文件
 
    ​	gcc -c $< -o $@，比如 gcc -c main.c -o main.o
 
+5. 例子
+
+   参考资料1[Makefile由浅入深--教程、干货](https://zhuanlan.zhihu.com/p/47390641)
+
+   参考资料2[Makefile简易教程](https://zhuanlan.zhihu.com/p/359807792)
+
+   隐晦规则：后缀为cpp的文件怎么编译成.o，后缀为c的文件怎么编译成.o
+
+   ```shell
+   .SUFFIXES: .cpp .c
+   .cpp.o:
+   	g++ ${INCL} -c $< # 伪等价于 g++ -o *.o -c INCL/*.cpp
+   
+   .c.o:
+   	gcc ${INCL} -c $< # 伪等价于 g++ -o *.o -c INCL/*.c
+   ```
+
+   ![image-20210518204637814](Linux基础4.assets/image-20210518204637814.png)
+
+   定义更多变量
+
+   ![image-20210518204809651](Linux基础4.assets/image-20210518204809651.png)
+
+   ```shell
+   #最后形成的Makefile
+   INCL=-I${HOME}/incl
+   BIN=$(HOME)/bin
+   OBJ1=hellocpp.o
+   OBJ2=hello.o
+   
+   .SUFFIXES: .cpp .c
+   .cpp.o:
+   	g++ ${INCL} -c $<
+   
+   .c.o:
+   	gcc ${INCL} -c $<
+   
+   all: hellocpp hello
+   
+   #C++编译
+   hellocpp:${OBJ1}
+   	@echo "============开始编译============"
+   	g++ -o $@ $? # 等价于 g++ -o hellocpp 
+   	@rm -f ${OBJ1}
+   	@mv $@ ${BIN}
+   	@echo "============编译结束============"
+   	@echo ""
+   
+   #C编译
+   hello:${OBJ2}
+   	@echo "============开始编译============"
+   	gcc -o $@ $?
+   	@rm -f ${OBJ2}
+   	@mv $@ ${BIN}
+   	@echo "============编译结束============"
+   	@echo ""
+   ```
+
    
 
 
