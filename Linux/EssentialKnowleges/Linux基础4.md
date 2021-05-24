@@ -1,5 +1,7 @@
 # Linux基础4
 
+![image-20210524201159128](Linux基础4.assets/image-20210524201159128.png)
+
 ## 十二、gdb调试
 
 [ZDZN中文速查](https://doc.zdzn.net/cheatsheet/gdb.html)
