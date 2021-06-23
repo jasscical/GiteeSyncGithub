@@ -1,8 +1,8 @@
 # GiteeSyncGithub
 
 #### 介绍
-面试笔记
-同步更新gitee/github
+- 面试笔记
+- 同步更新gitee/github
 
 联系方式：
 - 勘误邮箱:lqh1449308614@163.com
