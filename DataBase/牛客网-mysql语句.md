@@ -163,3 +163,15 @@ where employees.emp_no not in(
 
 
 
+```mysql
+select name as subject_name, girl_count from Subject_Info 
+where Subject_Info.id 
+in (select subject_id, count(*) as girl_count 
+             from Subject_Register
+where Subject_Register.student_id
+in (select Student_Info.id  from Student_Info where gender=2) 
+group by girl_count limit 3)
+```
+
+
+
