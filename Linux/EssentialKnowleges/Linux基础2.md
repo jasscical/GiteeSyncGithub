@@ -1,5 +1,7 @@
 # Linux基础2
 
+[TOC]
+
 ![image-20210524200948896](Linux基础2.assets/image-20210524200948896.png)
 
 ## 三、挂载

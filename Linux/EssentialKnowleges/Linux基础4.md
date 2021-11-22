@@ -1,5 +1,7 @@
 # Linux基础4
 
+[TOC]
+
 ![image-20210524201159128](Linux基础4.assets/image-20210524201159128.png)
 
 ## 十二、gdb调试

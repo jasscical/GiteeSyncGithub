@@ -1,5 +1,7 @@
 # Linux基础3
 
+[TOC]
+
 ![image-20210524201006474](Linux基础3.assets/image-20210524201006474.png)
 
 ## 九、Vim
